@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentimiento</title>
-    <link rel="stylesheet" href="css/nada.css">
-</head>
-<body>
-    <div id="cont1">
-        Esto es lo que siento por ti
-        <a href="nada.html"><button id="buttom1" type="button">Continuar</button></a>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/styleprincipal.css" />
+  </head>
+  <body>
+    
+    <div class="card rgb">
+      <div class="card-image card2"></div>
+      <div class="card-text card2">
+        <center><span class="date">PREGUNTA 1</span></center><br><br>
+        <h1>¿Que te agradezco?</h1>
+        <button onmousedown="sonido.play()" id="butn1_1"><h2>Reproducir</h2></button>
+        <a href="pregunta2.html"><button id="butn1_2"><h2>Continuar</h2></button></a>
+      </div>
+      <div id="gif1"></div>
+    <div id="gif2"></div>
     </div>
-</body>
+    
+   
+    <script src="vanilla-tilt.min.js"></script>
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".card"),{
+        glare: true,
+        reverse: true,
+        "max-glare": 0.15
+      });
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script src="js/boton.js"></script>
+    <script type="text/javascript">
+      let boton = document.querySelector("#butn1_1")
+      boton.addEventListener("click", () => {
+      let etiquetaAudio = document.createElement("audio")
+      etiquetaAudio.setAttribute("src", "sonido.m4a")
+      etiquetaAudio.play()
+})
+    </script>
+  </body>
 </html>
